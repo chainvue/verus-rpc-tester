@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Security / credential exposure
+    url: https://github.com/chainvue/verus-rpc-tester/security/advisories/new
+    about: Report vulnerabilities or leaked secrets privately — do NOT open a public issue.
+  - name: 📖 verus-rpc / verusd RPC docs
+    url: https://www.npmjs.com/package/verus-rpc
+    about: Questions about a specific RPC method's behavior belong upstream, not here.

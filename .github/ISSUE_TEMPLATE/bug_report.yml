@@ -1,0 +1,94 @@
+name: 🐛 Bug report
+description: Something in the RPC tester UI or backend isn't working
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please **redact any RPC credentials, private keys, addresses, or LAN hostnames/IPs** from logs and screenshots before posting.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+      placeholder: When I call `getblock` the result view shows … but I expected …
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Select method …
+        2. Params (JSON array): …
+        3. Click Run
+        4. See …
+    validations:
+      required: true
+
+  - type: input
+    id: method
+    attributes:
+      label: RPC method involved
+      description: Which method (if any) triggers it.
+      placeholder: sendcurrency
+    validations:
+      required: false
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: How were you running it?
+      options:
+        - Dev (npm run dev)
+        - Production (npm run build && npm start)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chain
+    attributes:
+      label: Chain
+      options:
+        - VRSCTEST (testnet)
+        - VRSC (mainnet)
+        - Other / PBaaS chain
+    validations:
+      required: true
+
+  - type: input
+    id: daemon-version
+    attributes:
+      label: verusd version
+      description: From the status banner or `getinfo`.
+      placeholder: 1.2.17-1
+    validations:
+      required: false
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version / commit
+      description: From the GitHub release tag or `git rev-parse --short HEAD`.
+      placeholder: v1.0.0
+    validations:
+      required: false
+
+  - type: input
+    id: env
+    attributes:
+      label: Node version & browser
+      placeholder: Node 22.4, Chrome 126 / macOS
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / error
+      description: Server console output or the client error message. **Redact credentials.**
+      render: shell
+    validations:
+      required: false

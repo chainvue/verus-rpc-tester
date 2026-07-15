@@ -1,0 +1,40 @@
+name: ✨ Feature request
+description: Suggest an improvement to the RPC tester
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do that's hard or impossible today?
+      placeholder: When testing `sendcurrency` I keep re-typing the same param object …
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should the tester do?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Web UI (method list, params, result view, history)
+        - Backend / API
+        - Safety (confirm dialog, dangerous methods)
+        - Docs / DX
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
